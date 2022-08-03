@@ -8,7 +8,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Agrandesr\\Arrays\\": "Utils/"
+            "AGrandesR\\Utils\\": "Utils/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AGrandesR\\Tests\\": "Tests/"
         }
     },
     "authors": [
@@ -17,5 +22,8 @@
             "email": "agrandesr@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "tests":"./vendor/bin/phpunit --testdox tests"
+    }
 }
