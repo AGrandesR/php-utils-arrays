@@ -24,6 +24,6 @@
     ],
     "require": {},
     "scripts": {
-        "tests":"./vendor/bin/phpunit --testdox tests"
+        "tests":"./vendor/bin/phpunit --testdox Tests"
     }
 }
