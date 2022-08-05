@@ -14,20 +14,6 @@ class Arrays {
     }
     //endregion
 
-    static function issetPath(string $path, $array) {
-        //TO-DO
-        $paths = explode('.',$array);
-        $isSet=true;
-        foreach($paths as $path){
-            if(isset($array[$path])){
-                $value=$array[$path];
-                array_shift($paths);
-                if(!empty($paths)) return self::isArrayRouteSetInArray(implode('.',$paths),$array[$path]);
-            }else return false;
-        }
-        return $isSet;
-    }
-
     static function pathSet(string $path, mixed $value, array &$receivedArray, bool $byReference=true) : array {
         self::avoidInfiniteLoop();
 
@@ -67,6 +53,10 @@ class Arrays {
             } else return null;
         }
         return $tmpArray;
+    }
+
+    static function setUnidimensional(array &$receivedArray, bool $byReference=true) {
+        
     }
 
     static function avoidInfiniteLoop(string $msg='') : void {
