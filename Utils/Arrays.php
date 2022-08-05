@@ -14,12 +14,9 @@ class Arrays {
     }
     //endregion
 
-    static function hello() {
-        return "hello";
-    }
-    //FROM agile-router...
-    static function isArrayRouteSetInArray(string $arrayRoute, array $array, &$value=null) : bool {
-        $paths = explode('.',$arrayRoute);
+    static function issetPath(string $path, $array) {
+        //TO-DO
+        $paths = explode('.',$array);
         $isSet=true;
         foreach($paths as $path){
             if(isset($array[$path])){
@@ -29,10 +26,6 @@ class Arrays {
             }else return false;
         }
         return $isSet;
-    }
-    
-    static function issetPath(string $path, $array) {
-        //Random
     }
 
     static function pathSet(string $path, mixed $value, array &$receivedArray, bool $byReference=true) : array {

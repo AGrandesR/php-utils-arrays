@@ -3,19 +3,14 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 use AGrandesR\Utils\Arrays;
 
-final class ArraysTest extends TestCase
+final class pathSetTest extends TestCase
 {
-
-    public function testHello(): void
-    {
+    public function testControl() {
         Arrays::setPathSeparator('.');
-        $this->assertEquals(
-            'hello',
-            Arrays::hello()
-        );
+        $this->assertEquals(true,true);
     }
 
-    public function testPathSetDeepChange() {
+    public function testDeepChange() {
         $firstTest=[
             "1lvl1"=>[
                 "1lvl2"=>"Hello",
@@ -44,7 +39,7 @@ final class ArraysTest extends TestCase
 
     }
 
-    public function testPathSetRootChange(){
+    public function testRootChange(){
         $array=[""=>["random"=>"random"]];
         $firstTest=[""=>"test"];
         $firstTry=Arrays::pathSet('',"test",$array);
