@@ -32,7 +32,7 @@ class Arrays {
     }
     
     static function issetPath(string $path, $array) {
-
+        //Random
     }
 
     static function pathSet(string $path, mixed $value, array &$receivedArray, bool $byReference=true) : array {
