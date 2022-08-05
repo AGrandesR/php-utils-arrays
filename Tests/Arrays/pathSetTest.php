@@ -12,19 +12,19 @@ final class pathSetTest extends TestCase
 
     public function testDeepChange() {
         $firstTest=[
-            "1lvl1"=>[
-                "1lvl2"=>"Hello",
-                "1lvl2"=>"Test"
+            '1lvl1'=>[
+                '1lvl2'=>'Hello',
+                '1lvl2'=>'Test'
             ],
-            "2lvl1"=>[
-                "1lvl2"=>"Hello",
-                "2lvl2"=>[
-                    "1lvl3"=>[
-                        "1lvl4"=>"There"
+            '2lvl1'=>[
+                '1lvl2'=>'Hello',
+                '2lvl2'=>[
+                    '1lvl3'=>[
+                        '1lvl4'=>'There'
                     ]
                 ]
             ],
-            "Random string"
+            'Random string'
         ];
         $firstTry=Arrays::pathSet('1lvl1.1lvl2','Hi',$firstTest);
 
@@ -40,9 +40,9 @@ final class pathSetTest extends TestCase
     }
 
     public function testRootChange(){
-        $array=[""=>["random"=>"random"]];
-        $firstTest=[""=>"test"];
-        $firstTry=Arrays::pathSet('',"test",$array);
+        $array=[''=>['random'=>'random']];
+        $firstTest=[''=>'test'];
+        $firstTry=Arrays::pathSet('','test',$array);
         $this->assertEquals(
             $firstTest,
             $firstTry
@@ -52,7 +52,7 @@ final class pathSetTest extends TestCase
 
     public function testPathSetSeparatorChange(){
         Arrays::setPathSeparator('.');
-        $firstTest=["lvl1"=>["lvl2"=>["lvl3"=>'success']]];
+        $firstTest=['lvl1'=>['lvl2'=>['lvl3'=>'success']]];
         $firstTry=Arrays::pathSet('lvl1.lvl2.lvl3','test',$firstTest,false);
         $this->assertEquals(
             'test',
