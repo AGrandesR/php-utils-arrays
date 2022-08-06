@@ -67,4 +67,18 @@ final class pathSetTest extends TestCase
         );
     }
     
+    public function testPathSetOnEmptyArray() {
+        Arrays::setPathSeparator('.');
+        $firstTest=[];
+        $firstTry=Arrays::pathSet('lvl1.lvl2.lvl3','test',$firstTest,false);
+
+        $this->assertEquals(
+            'test',
+            $firstTry['lvl1']['lvl2']['lvl3']
+        );
+        $this->assertEquals(
+            ['lvl3'=>'test'],
+            $firstTry['lvl1']['lvl2']
+        );
+    }
 }
