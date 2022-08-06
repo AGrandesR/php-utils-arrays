@@ -33,9 +33,10 @@ class Arrays {
             $workingArray[$actualKeyOfTheArray]=$value;
             return  $workingArray;
         }
-        unset($pathSlugs[0]); //We remove the 
+        unset($pathSlugs[0]); //We remove the slug
         $pathSlugs=array_values($pathSlugs); //Resort the array to avoid problems with the unset
         if(!isset($workingArray[$actualKeyOfTheArray])) $workingArray[$actualKeyOfTheArray]=[];
+        if(!is_array($workingArray[$actualKeyOfTheArray])) $workingArray[$actualKeyOfTheArray]=[];
         self::pathSet(implode($sprt,$pathSlugs),$value,$workingArray[$actualKeyOfTheArray]);
         return $workingArray;
     }

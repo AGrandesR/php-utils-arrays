@@ -81,4 +81,19 @@ final class pathSetTest extends TestCase
             $firstTry['lvl1']['lvl2']
         );
     }
+
+    public function testPathWithStringsElements() {
+        Arrays::setPathSeparator('.');
+        $firstTest=['lvl1'=>['lvl2'=>''],'1lvl'=>['2lvl'=>[]]];
+        $firstTry=Arrays::pathSet('lvl1.lvl2.lvl3','test',$firstTest);
+
+        $this->assertEquals(
+            'test',
+            $firstTry['lvl1']['lvl2']['lvl3']
+        );
+        $this->assertEquals(
+            ['lvl3'=>'test'],
+            $firstTry['lvl1']['lvl2']
+        );
+    }
 }
