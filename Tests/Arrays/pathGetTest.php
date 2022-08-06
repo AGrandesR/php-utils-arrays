@@ -3,7 +3,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 use AGrandesR\Utils\Arrays;
 
-final class pathGet_Test extends TestCase
+final class pathGetTest extends TestCase
 {
     public function testControl() {
         Arrays::setPathSeparator('.');
