@@ -18,7 +18,7 @@ final class setUnidimensionalTest extends TestCase
         ];
         $firstTry=Arrays::setUnidimensional($firstTest);
         $this->assertEquals(
-            ['1lvl1.1lvl2'=>'random','1lvl1.1lvl2.1lvl3.1lvl4'=>'more random','2lvl1'=>[],'3lvl1.0'=>'test'],
+            ['1lvl1.1lvl2'=>'random','1lvl1.1lvl3.1lvl4'=>'more random','2lvl1'=>[],'3lvl1.0'=>'test'],
             $firstTry
         );
         foreach ($firstTry as $value) {
@@ -31,12 +31,13 @@ final class setUnidimensionalTest extends TestCase
     public function testIfSeparatorIsWorking(){
         $firstTest=[
             '1lvl1'=>['1lvl2'=>'random','1lvl3'=>['1lvl4'=>'more random']],
-            '3lvl1'=>['test']
+            '2lvl1'=>['test']
         ];
         Arrays::setPathSeparator('/');
         $firstTry=Arrays::setUnidimensional($firstTest);
+
         $this->assertEquals(
-            ['1lvl1.1lvl2'=>'random','1lvl1/1lvl2/1lvl3/1lvl4'=>'more random','2lvl1/0'=>'test'],
+            ['1lvl1/1lvl2'=>'random','1lvl1/1lvl3/1lvl4'=>'more random','2lvl1/0'=>'test'],
             $firstTry
         );
         foreach ($firstTry as $value) {
