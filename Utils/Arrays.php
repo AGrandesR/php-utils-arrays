@@ -55,8 +55,31 @@ class Arrays {
         return $tmpArray;
     }
 
-    static function setUnidimensional(array &$receivedArray, bool $byReference=true) {
-        
+    static function setUnidimensional(array &$mdArray, bool $byReference=true, string $prefix='') : array {
+        if($byReference) $workingArray = &$mdArray;
+        else $workingArray = $mdArray;
+
+        if(!isset($GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR'])) $GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR']='.';
+        $sprt=$GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR'];
+
+        $udArray=[];
+        foreach ($workingArray as $key => $value) {
+
+            if(!is_array($value) || $value==[]){
+                $udArray[$prefix.($prefix===''?'':$sprt).$key]=$value;
+                continue;
+            }
+            foreach($value as $k=>$arrayValue){
+                $newPrefix=$prefix.($prefix===''?'':$sprt).$key.$sprt.$k;
+                if(!is_array($arrayValue) || $value==[] ){
+                    $udArray[$newPrefix]=$arrayValue;
+                    continue;
+                }
+                $udArray=array_merge($udArray,self::setUnidimensional($arrayValue,$byReference,$newPrefix));
+            }
+            continue;
+        }
+        return $workingArray=$udArray;
     }
 
     static function avoidInfiniteLoop(string $msg='') : void {
