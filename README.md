@@ -99,6 +99,21 @@ This function allows to us to get the value in an array using a path route. The 
 ### Return
  - **value**: Is the value of inside the array. Null if not exist. 
 
+### Examples
+``` php
+$test=[
+    'lvl1'=>[
+        'lvl2'=>''
+    ],
+    '1lvl'=>[
+        '2lvl'=>[1,2,3]
+    ]
+];
+echo Arrays::pathGet('1lvl.2lvl.1',$test);
+//Output: 2
+```
+
+
 # Aditional information
 
 <!--
