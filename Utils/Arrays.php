@@ -1,5 +1,5 @@
 <?php
-namespace AGrandesR\Utils;
+namespace Agrandesr\Utils;
 
 use Error;
 

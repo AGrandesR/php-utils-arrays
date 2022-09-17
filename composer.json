@@ -8,12 +8,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AGrandesR\\Utils\\": "Utils/"
+            "Agrandesr\\Utils\\": "Utils/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AGrandesR\\Tests\\": "Tests/"
+            "Agrandesr\\Tests\\": "Tests/"
         }
     },
     "authors": [

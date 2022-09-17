@@ -23,7 +23,7 @@ Next, you can use in your code. We encourage to use in the root file _index.php_
 ```php
 <?php
 
-use AgrandesR\Utils\Arrays;
+use Agrandesr\Utils\Arrays;
 
 $array=['lvl1'=>['lvl2'=>'lvl3'=>'content'];
 
@@ -125,11 +125,11 @@ Please read [CONTRIBUTING.md]() for details of our code of conduct, and the proc
 
 ## Versioning: 📌
 
-For all available versions, see the [tags in this repository](https://github.com/AGrandesR/php-utils-arrays/tags).
+For all available versions, see the [tags in this repository](https://github.com/Agrandesr/php-utils-arrays/tags).
 
 ## Authors ✒️
 
-* **A.Grandes.R** - *Main worker* - [AGrandesR](https://github.com/AGrandesR)
+* **A.Grandes.R** - *Main worker* - [Agrandesr](https://github.com/Agrandesr)
 
 You can also look at the list of all [contributors] (https://github.com/your/project/contributors) who have participated in this project.
 
