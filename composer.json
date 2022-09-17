@@ -24,6 +24,7 @@
     ],
     "require": {},
     "scripts": {
-        "tests":"./vendor/bin/phpunit --testdox Tests"
+        "tests":"./vendor/bin/phpunit --testdox Tests",
+        "coverage":"./vendor/bin/phpunit --path-coverage Tests"
     }
 }
