@@ -114,6 +114,40 @@ echo Arrays::pathGet('1lvl.2lvl.1',$test);
 ```
 
 
+## setUnidimensional()
+This function transform a multidimensional array with path keys to a unidimensional array with a path. You can add a prefix to the key paths.
+
+### Parameters
+ - **mdArray**: This is the multidimensional array with paths in keys that we want to convert into unidimensional. [array]
+ - **byReference**: This is to indicate if you want to change the original array or not. [string]
+ - **byReference**: This is to add a prefix to your path key of the new array (for example "PREFIX.id.property.name"). [string]
+### Return
+ - **value**: The new unidimensional array. 
+## setMultidimensional()
+This function transform a unidimensional array with path keys to a multidimensional array. Is the function inverse to setUnidimensional.
+
+### Parameters
+ - **udArray**: This is the unidimensional array with paths in keys that we want to convert into multidimensional. [array]
+ - **byReference**: This is to indicate if you want to change the original array or not. [string]
+### Return
+ - **value**: The new multidimensional array.
+
+
+### Examples
+``` php
+$test=[
+    'lvl1'=>[
+        'lvl2'=>''
+    ],
+    '1lvl'=>[
+        '2lvl'=>[1,2,3]
+    ]
+];
+echo Arrays::pathGet('1lvl.2lvl.1',$test);
+//Output: 2
+```
+
+
 # Aditional information
 
 <!--

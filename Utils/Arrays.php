@@ -83,6 +83,19 @@ class Arrays {
         return $workingArray=$udArray;
     }
 
+    static function setMultidimensional(array &$udArray, bool $byReference=true) {
+        if(!isset($GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR'])) $GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR']='.';
+        $sprt=$GLOBALS['X-AGRANDESR-ARRAYS-SEPARATOR'];
+
+        $mdArray=[];
+        foreach ($udArray as $path => $value) {
+            self::pathSet($path,$value,$mdArray);
+        }
+
+        if($byReference) $udArray=$mdArray;
+        return $mdArray;
+    }
+
     static function avoidInfiniteLoop(string $msg='') : void {
         if(isset($GLOBALS['X-AGRANDESR-AVOID-INFINITE'])) {
             if($GLOBALS['X-AGRANDESR-AVOID-INFINITE-LOOP']>100) throw new Error("Infinite Loop: $msg", 1);
