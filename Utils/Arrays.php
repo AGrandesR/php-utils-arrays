@@ -96,9 +96,9 @@ class Arrays {
         return $mdArray;
     }
 
-    static function avoidInfiniteLoop(string $msg='') : void {
+    static function avoidInfiniteLoop(string $msg='', int $code=1) : void {
         if(isset($GLOBALS['X-AGRANDESR-AVOID-INFINITE'])) {
-            if($GLOBALS['X-AGRANDESR-AVOID-INFINITE-LOOP']>100) throw new Error("Infinite Loop: $msg", 1);
+            if($GLOBALS['X-AGRANDESR-AVOID-INFINITE-LOOP']>100) throw new Error("Infinite Loop: $msg", $code);
             $GLOBALS['X-AGRANDESR-AVOID-INFINITE-LOOP']++;
         }else $GLOBALS['X-AGRANDESR-AVOID-INFINITE-LOOP']=0;
     }
